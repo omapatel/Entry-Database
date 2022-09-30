@@ -11,14 +11,12 @@ collection = db['ENTER_COLLECTION_NAME']  # connect to the table (subcategory)
 today = datetime.datetime.today().replace(microsecond=0)
 
 
-def view_specific(choice):
+def view_specific(choice): # used to return the updated entry from update_delete()
     results = collection.find_one({"_id": choice})
-    # col_names = ["ID", "Date", "Total Sales", "Credit", "Delivery", "Cash", "Total"]
-
     return results
 
 
-def new_entry(user):
+def new_entry(user): # daily and date-specific entries can be made here
     post_count = collection.count_documents({})
 
     if user == 2:
@@ -44,7 +42,7 @@ def new_entry(user):
     return menu()
 
 
-def search():
+def search(): # allows the user to find entries in a given timeframe, gives the option to calculate totals at the end
     from_date = '2022-07-29' + 'T00:00:00+00:00'
     to_date = '2022-08-30' + 'T23:59:59+00:00'
     flag = 1
@@ -106,7 +104,7 @@ def search():
     return menu()
 
 
-def view_all():
+def view_all(): # finds all entries in the collection and prints using tabulate (generates a table)
     if collection.count_documents({}) == 0:
         print("Nothing to display\n")
         return menu()
@@ -155,7 +153,7 @@ def view_all():
     return menu()
 
 
-def update_delete():
+def update_delete(): # allows the user to edit any entries they have made
     user_id = -1
     while (user_id < 0) or (user_id > collection.count_documents({})):
         try:
@@ -229,7 +227,7 @@ def update_delete():
 
     return menu()
 
-def backup():
+def backup(): # creates a new file (or overwrites an existing one) with entries using the user-specified timeframe
     from_date = '2022-07-29' + 'T00:00:00+00:00'
     to_date = '2022-08-30' + 'T23:59:59+00:00'
     file_name = ""
@@ -271,7 +269,7 @@ def backup():
     return menu()
 
 
-def menu():
+def menu(): # user interface to select options
     print("1. New Daily Entry\n2. Specific Entry (not today)\n3. Search\n4. View All\n"
           "5. Update/Delete Entries\n6. Backup Entries to New File\n7. Exit Program")
     if collection.count_documents({}) % 31 == 0:
