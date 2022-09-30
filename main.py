@@ -5,8 +5,8 @@ from tabulate import tabulate
 client = pymongo.MongoClient(
     "mongodb+srv://USERNAME:PASSWORD@cluster0.jthrb.mongodb.net/?retryWrites=true&w=majority"
 )
-db = client['Test1']  # connect to the overall database
-collection = db['test_subcat']  # connect to the table (subcategory)
+db = client['ENTER_DB_NAME']  # connect to the overall database
+collection = db['ENTER_COLLECTION_NAME']  # connect to the table (subcategory)
 
 today = datetime.datetime.today().replace(microsecond=0)
 
