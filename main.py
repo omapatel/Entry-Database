@@ -3,10 +3,11 @@ import datetime
 from tabulate import tabulate
 
 client = pymongo.MongoClient(
-    "mongodb+srv://USERNAME:PASSWORD@cluster0.jthrb.mongodb.net/?retryWrites=true&w=majority"
+    "mongodb+srv://USERNAME:PASSWORD@CLUSTER.jthrb.mongodb.net/?retryWrites=true&w=majority&appName=CLUSTER"
 )
 db = client['ENTER_DB_NAME']  # connect to the overall database
 collection = db['ENTER_COLLECTION_NAME']  # connect to the table (subcategory)
+
 
 today = datetime.datetime.today().replace(microsecond=0)
 
@@ -92,11 +93,11 @@ def search(): # allows the user to find entries in a given timeframe, gives the 
             d_total += float(i["delivery"])
             ca_total += float(i["cash"])
             t_total += float(i["total"])
-        print(f"'Total Sales' Total: {ts_total}\n"
-              f"'Credit' Total: {cr_total}\n"
-              f"'Delivery' Total: {d_total}\n"
-              f"'Cash' Total: {ca_total}\n"
-              f"'Total' Total: {t_total}\n")
+        print(f"'Total Sales' Total: {ts_total:.2f}\n"
+              f"'Credit' Total: {cr_total:.2f}\n"
+              f"'Delivery' Total: {d_total:.2f}\n"
+              f"'Cash' Total: {ca_total:.2f}\n"
+              f"'Total' Total: {t_total:.2f}\n")
     else:
         pass
 
@@ -141,11 +142,11 @@ def view_all(): # finds all entries in the collection and prints using tabulate 
             d_total += float(i["delivery"])
             ca_total += float(i["cash"])
             t_total += float(i["total"])
-        print(f"'Total Sales' Total: {ts_total}\n"
-              f"'Credit' Total: {cr_total}\n"
-              f"'Delivery' Total: {d_total}\n"
-              f"'Cash' Total: {ca_total}\n"
-              f"'Total' Total: {t_total}\n")
+        print(f"'Total Sales' Total: {ts_total:.2f}\n"
+              f"'Credit' Total: {cr_total:.2f}\n"
+              f"'Delivery' Total: {d_total:.2f}\n"
+              f"'Cash' Total: {ca_total:.2f}\n"
+              f"'Total' Total: {t_total:.2f}\n")
     else:
         pass
 
@@ -296,7 +297,6 @@ def menu(): # user interface to select options
     elif user == 6:
         backup()
     else:
-        exit()
-
+        client.close()
 
 menu()
