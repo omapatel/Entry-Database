@@ -16,7 +16,8 @@ This database is to help transfer pencil-paper accounting to something more stre
 6. Backup Entries to New File (Every month the program prompts an automatic backup to a text file)
 7. Exit Program (Disconnects client)
 
-To connect to your personal cluster on MongoDB, follow their documentation: https://www.mongodb.com/resources/languages/pymongo-tutorial?msockid=35f0ce4bafa961870f7ddce3ae03602c
+To connect to your personal cluster on MongoDB, follow their documentation: 
+https://www.mongodb.com/resources/languages/pymongo-tutorial?msockid=35f0ce4bafa961870f7ddce3ae03602c
 
 From my program, lines 5-9 need to be changed. The username, password, cluster name (2 spots), database name, and table (subcategory name).
 
@@ -37,6 +38,6 @@ Overall, it was a very enjoyable learning experience which gave me some insight 
 
 # Authorship
 
-I'm Om Patel, an Electrical Engineering student with a passion for creating useful products by applying foundational engineering principles and software skills. You can check out more of my work in my portfolio:
+I developed this project myself and took feedback from supervisors. You can check out more of my work in my portfolio:
 
 ### [Visit my portfolio](https://portfolio-ompatel.netlify.app/)
