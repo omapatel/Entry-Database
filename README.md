@@ -5,7 +5,7 @@
 ![image](https://github.com/user-attachments/assets/cb7ca33e-ab8c-4101-9175-19750965e57e)
 
 # Description
-The databse connects to a MongoDB cluter. The daily entries are tailored to sales information. Each entry includes "Total Sales", "Credit", "Delivery", "Cash", and an automatically calculated *true* "Total" which adds the previous details for comparing the expected "Total Sales".
+The databse connects to a MongoDB cluster. The daily entries are tailored to sales information. Each entry includes "Total Sales", "Credit", "Delivery", "Cash", and an automatically calculated *true* "Total" which adds the previous details for comparing the expected "Total Sales".
 
 This database is to help transfer pencil-paper accounting to something more streamlined. The main program features 7 key functions: 
 1. New Daily Entry (A habitual entry done per day)
