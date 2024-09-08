@@ -2,6 +2,7 @@
 #### Enter and store information related to sales to quickly access through a database using pymongo
 
 # Overview
+An example usage for the script, showcasing a specific day's entry and printing all entries currently in the database.\
 ![image](https://github.com/user-attachments/assets/cb7ca33e-ab8c-4101-9175-19750965e57e)
 
 # Description
